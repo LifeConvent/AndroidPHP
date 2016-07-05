@@ -19,6 +19,10 @@ switch ($id) {
         $newpass = $_POST['newpass'];
         $data = array('username' => $name, 'oldpass' => $oldpass, 'newpass' => $newpass);
         break;
+    case 'SUI001':
+        $name = $_POST['name'];
+        $data = array('username' => $name);
+        break;
     default:
         $data = null;
         break;
