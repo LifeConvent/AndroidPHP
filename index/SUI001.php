@@ -9,85 +9,96 @@
 
 require '../DBcon/UserInfoSearch.php';
 
+$response = search_user_info_with_image_src('name');
 //$username = 'admin';
-$username = $_POST['username'];
-$method = $_POST['m'];
-$base_path = "../uploads_image/"; //接收文件目录
 
-switch ($method) {
-    case'SUI':
-        $response = search_user_info($username);
-        break;
-    case'IUI':
-        $name = $_POST['name'];
-        $sex = $_POST['sex'];
-        $age = $_POST['age'];
-        $city = $_POST['city'];
-        $phone = $_POST['phone'];
-        $birthday = $_POST['birthday'];
-        $response = insert_user_info($username, $name, $sex, $age, $city, $phone, $birthday);
-        break;
-    case'UUI':
-        $name = $_POST['name'];
-        $sex = $_POST['sex'];
-        $age = $_POST['age'];
-        $city = $_POST['city'];
-        $phone = $_POST['phone'];
-        $birthday = $_POST['birthday'];
-        $response = update_user_info($username, $name, $sex, $age, $city, $phone, $birthday);
-        break;
-    case'SUIM':
-        $response = search_user_info_with_image_src($username);
-        break;
-    case'IUIM':
-        $name = $_POST['name'];
-        $sex = $_POST['sex'];
-        $age = $_POST['age'];
-        $city = $_POST['city'];
-        $phone = $_POST['phone'];
-        $birthday = $_POST['birthday'];
-
-        if ($_FILES["image"]["error"] > 0) {
-            break;
-        } else {
-            $image_name = $_FILES["image"]["name"];//上传文件的名称
-            $image_type = $_FILES["image"]["type"];
-            $image_size = ($_FILES["image"]["size"] / 1024);
-            $image_tmp = $_FILES["image"]["tmp_name"];//存储在服务器的文件的临时副本的名称
-
-            $target_path = $base_path . basename($image_name);
-            //失败时返回false
-            move_uploaded_file($_FILES ['image'] ['tmp_name'], $target_path);
-        }
-        $response = insert_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday, $target_path);
-        break;
-    case'UUIM':
-        $name = $_POST['name'];
-        $sex = $_POST['sex'];
-        $age = $_POST['age'];
-        $city = $_POST['city'];
-        $phone = $_POST['phone'];
-        $birthday = $_POST['birthday'];
-
-        if ($_FILES["image"]["error"] > 0) {
-            break;
-        } else {
-            $image_name = $_FILES["image"]["name"];//上传文件的名称
-            $image_type = $_FILES["image"]["type"];
-            $image_size = ($_FILES["image"]["size"] / 1024);
-            $image_tmp = $_FILES["image"]["tmp_name"];//存储在服务器的文件的临时副本的名称
-
-            $target_path = $base_path . basename($image_name);
-            //失败时返回false
-            move_uploaded_file($_FILES ['image'] ['tmp_name'], $target_path);
-        }
-        $response = update_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday,$target_path);
-        break;
-    /**
-     *  路径重名问题待解决
-     */
-}
-
+//$username = $_POST['username'];
+//$method = $_POST['m'];
+//$base_path = "../uploads_image/"; //接收文件目录
+//
+//switch ($method) {
+//    case'SUI':
+//        $response = search_user_info($username);
+//        break;
+//    case'IUI':
+//        $name = $_POST['name'];
+//        $sex = $_POST['sex'];
+//        $age = $_POST['age'];
+//        $city = $_POST['city'];
+//        $phone = $_POST['phone'];
+//        $birthday = $_POST['birthday'];
+//        $response = insert_user_info($username, $name, $sex, $age, $city, $phone, $birthday);
+//        break;
+//    case'UUI':
+//        $name = $_POST['name'];
+//        $sex = $_POST['sex'];
+//        $age = $_POST['age'];
+//        $city = $_POST['city'];
+//        $phone = $_POST['phone'];
+//        $birthday = $_POST['birthday'];
+//        $response = update_user_info($username, $name, $sex, $age, $city, $phone, $birthday);
+//        break;
+//    case'SUIM':
+//        $response = search_user_info_with_image_src($username);
+//        break;
+//    case'IUIM':
+//        $name = $_POST['name'];
+//        $sex = $_POST['sex'];
+//        $age = $_POST['age'];
+//        $city = $_POST['city'];
+//        $phone = $_POST['phone'];
+//        $birthday = $_POST['birthday'];
+//
+//        if ($_FILES["image"]["error"] > 0) {
+//            break;
+//        } else {
+//            $image_name = $_FILES["image"]["name"];//上传文件的名称
+//            $image_type = $_FILES["image"]["type"];
+//            $image_size = ($_FILES["image"]["size"] / 1024);
+//            $image_tmp = $_FILES["image"]["tmp_name"];//存储在服务器的文件的临时副本的名称
+//
+//            $temp = explode(".", $image_name);
+//            $extension = end($temp);//获取后缀名
+//            date_default_timezone_set('prc');
+//            $time_stamp = strtotime(date('Y - m - d H:i:s', time()));
+//            $target_path = $base_path . $time_stamp . $extension;
+//
+//            //失败时返回false
+//            move_uploaded_file($_FILES ['image'] ['tmp_name'], $target_path);
+//        }
+//        $response = insert_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday, $target_path);
+//        break;
+//    case'UUIM':
+//        $name = $_POST['name'];
+//        $sex = $_POST['sex'];
+//        $age = $_POST['age'];
+//        $city = $_POST['city'];
+//        $phone = $_POST['phone'];
+//        $birthday = $_POST['birthday'];
+//
+//        if ($_FILES["image"]["error"] > 0) {
+//            break;
+//        } else {
+//            $image_name = $_FILES["image"]["name"];//上传文件的名称
+//            $image_type = $_FILES["image"]["type"];
+//            $image_size = ($_FILES["image"]["size"] / 1024);
+//            $image_tmp = $_FILES["image"]["tmp_name"];//存储在服务器的文件的临时副本的名称
+//
+//            $temp = explode(".", $image_name);
+//            $extension = end($temp);//获取后缀名
+//            date_default_timezone_set('prc');
+//            $time_stamp = strtotime(date('Y - m - d H:i:s', time()));
+//            $target_path = $base_path . $time_stamp . $extension;
+//
+//            //失败时返回false
+//            move_uploaded_file($_FILES ['image'] ['tmp_name'], $target_path);
+//        }
+//        $response = update_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday, $target_path);
+//        break;
+//    /**
+//     *  路径重名问题待解决,利用时间戳生成文件名
+//     */
+//}
 
 
 echo json_encode($response);

@@ -97,7 +97,6 @@ function update_user_info_with_image($username, $name, $sex, $age, $city, $phone
             return array('result' => 'success');
         } else {
             return array('result' => 'error', 'message' => 'UPDATE_FAILED');
-            echo "Error".$sql_update_user_info.$conn->error;
         }
         $conn->close();
     } else {
@@ -154,14 +153,30 @@ function search_user_info_with_image_src($username)
     $result = $conn->query($sql_search_user_info);
     $conn->close();
     if ($row = $result->fetch_assoc()) {
-        $blob_img = addslashes(fread(fopen($row['image_src'], "rb"), filesize($row['image_src'])));
+//        $blob_img = fread(fopen($row['image_src'], "rb"), filesize($row['image_src']));
 
         //返回图片地址
-        return array('account' => $username, 'name' => $row['name'], 'sex' => $row['sex'], 'age' => $row['age'], 'city' => $row['city']
-        , 'phone' => $row['phone'], 'birthday' => $row['birthday'],'image_src' => $row['image_src']);
-//        返回二进制图片
 //        return array('account' => $username, 'name' => $row['name'], 'sex' => $row['sex'], 'age' => $row['age'], 'city' => $row['city']
-//        , 'phone' => $row['phone'], 'birthday' => $row['birthday'],'image' => $blob_img);
+//        , 'phone' => $row['phone'], 'birthday' => $row['birthday'],'image_src' => $row['image_src']);
+
+//        返回二进制图片,成功显示
+//        Header( "Content-type: image/gif");
+//        echo $blob_img;
+
+        //base64传输图片
+        $image_file = $row['image_src'];
+        $image_info = getimagesize($image_file);
+        $base64_image_content = "data:{$image_info['mime']};base64," . chunk_split(base64_encode(file_get_contents($image_file)));
+
+        //base64解码为二进制图片
+//        $base64_body = substr(strstr($base64_image_content,','),1);
+//        $data= base64_decode($base64_body );
+//        Header( "Content-type: image/gif");
+//        echo $data;
+
+        return array('account' => $username, 'name' => $row['name'], 'sex' => $row['sex'], 'age' => $row['age'], 'city' => $row['city']
+        , 'phone' => $row['phone'], 'birthday' => $row['birthday'],'image' => $base64_image_content);
+
     } else {
         return array('result' => 'error', 'message' => 'ACCOUNT_ERROR');
     }

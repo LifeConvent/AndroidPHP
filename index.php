@@ -26,8 +26,7 @@ switch ($id) {
         $method = $_GET['m'];
 
         if ($_FILES['image']['name'] != null) {
-//            $temp = explode(".", $_FILES["image"]["name"]);
-//            $extension = end($temp);//获取后缀名
+
             $cfile = curl_file_create($_FILES['image']['name'], 'image/jpeg', 'image');
             $data = array('username' => $name, 'method' => $method, 'image' => $cfile);
         } else
