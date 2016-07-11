@@ -173,11 +173,25 @@ function search_user_info_with_image_src($username)
 //        $data= base64_decode($base64_body );
 //        Header( "Content-type: image/gif");
 //        echo $data;
-
-        return array('account' => $username, 'name' => $row['name'], 'sex' => $row['sex'], 'age' => $row['age'], 'city' => $row['city']
+//        echo $base64_image_content;
+        return array('result' => 'success', 'account' => $username, 'name' => $row['name'], 'sex' => $row['sex'], 'age' => $row['age'], 'city' => $row['city']
         , 'phone' => $row['phone'], 'birthday' => $row['birthday'],'image' => $base64_image_content);
 
     } else {
         return array('result' => 'error', 'message' => 'ACCOUNT_ERROR');
+    }
+}
+
+function search_user_image_src($username)
+{
+    $conn = userCon();
+    $sql_search_user_info = "select * from user_info where user_name = '$username'";
+    $result = $conn->query($sql_search_user_info);
+    $conn->close();
+    if ($row = $result->fetch_assoc()) {
+        $image_file = $row['image_src'];
+        return $image_file;
+    } else {
+        return null;
     }
 }
