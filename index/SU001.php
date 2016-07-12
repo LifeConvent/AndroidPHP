@@ -6,7 +6,7 @@
  * Time: 上午9:42
  */
 
-require 'DBcon/UserSearch.php';
+require '../DBcon/UserSearch.php';
 
 //$name = 'adm';
 //$pass = '21232f297a57a5a743894a0e4a801fc3';

@@ -4,7 +4,7 @@ $id = $_GET['id'];
 $ch = curl_init();
 
 if ($id != null)
-    curl_setopt($ch, CURLOPT_URL, 'http://localhost/AndroidPHP/index' . $id . '.php');
+    curl_setopt($ch, CURLOPT_URL, 'http://localhost/AndroidPHP/index/' . $id . '.php');
 
 switch ($id) {
     case 'SI001':
@@ -42,3 +42,5 @@ if ($data != null) {
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     curl_exec($ch);
 }
+
+//没用的修改,区别分支
