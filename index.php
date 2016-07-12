@@ -42,3 +42,5 @@ if ($data != null) {
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     curl_exec($ch);
 }
+
+//没用的注释,可以删掉
