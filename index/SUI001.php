@@ -107,7 +107,7 @@ switch ($method) {
             $before_image_path;
             //删除该路径下的图片
         }else{
-            $new_file;
+            ublink($new_file);
             //删除该路径下的图片
         }
         break;
@@ -134,10 +134,10 @@ switch ($method) {
         }
         $response = update_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday, $new_file);
         if ($response['result'] == 'success') {
-            $before_image_path;
+            unlink($before_image_path);
             //删除该路径下的图片
         }else{
-            $new_file;
+            unlink($new_file);
             //删除该路径下的图片
         }
         break;
