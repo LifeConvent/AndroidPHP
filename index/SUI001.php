@@ -104,11 +104,10 @@ switch ($method) {
 
         $response = insert_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday, $new_file);
         if ($response['result'] == 'success') {
-            $before_image_path;
-            //删除该路径下的图片
         }else{
-            $new_file;
+            unlink($new_file);
             //删除该路径下的图片
+            /** 数据库存储未删除成功的文件 */
         }
         break;
     case'UUIM':
@@ -134,11 +133,13 @@ switch ($method) {
         }
         $response = update_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday, $new_file);
         if ($response['result'] == 'success') {
-            $before_image_path;
+            unlink($before_image_path);
             //删除该路径下的图片
+            /** 数据库存储未删除成功的文件 */
         }else{
-            $new_file;
+            unlink($new_file);
             //删除该路径下的图片
+            /** 数据库存储未删除成功的文件 */
         }
         break;
 }
