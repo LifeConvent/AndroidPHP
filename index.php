@@ -22,13 +22,24 @@ switch ($id) {
         $data = array('username' => $name, 'oldpass' => $oldpass, 'newpass' => $newpass);
         break;
     case 'SUI001':
-        $name = $_POST['name'];
         $method = $_GET['m'];
-        if ($_POST['image']!= null&&$_POST['image']!='') {
-            $data = array('username' => $name, 'method' => $method, 'image' => $_POST{'image'});
-        } else {
-            $data = array('username' => $name, 'method' => $method);
+        $account = $_POST['account'];
+        if ($method != 'SUI' && $method != 'SUIM') {
+            $name = $_POST['name'];
+            $sex = $_POST['sex'];
+            $age = $_POST['age'];
+            $city = $_POST['city'];
+            $phone = $_POST['phone'];
+            $birthday = $_POST['birthday'];
+            if ($_POST['image'] != null && $_POST['image'] != '') {
+                $data = array('username' => $account, 'method' => $method, 'birthday' => $birthday, 'name' => $name, 'sex' => $sex, 'age' => $age, 'city' => $city, 'phone' => $phone, 'image' => $_POST{'image'});
+            } else {
+                $data = array('username' => $account, 'method' => $method, 'birthday' => $birthday, 'name' => $name, 'sex' => $sex, 'age' => $age, 'city' => $city, 'phone' => $phone);
+            }
+        }else{
+            $data = array('username' => $account, 'method' => $method);
         }
+
 //        if ($_FILES['image']['name'] != null) {
 //            $cfile = curl_file_create($_FILES['image']['name'], 'image/jpeg', 'image');
 //            $data = array('username' => $name, 'method' => $method, 'image' => $cfile);

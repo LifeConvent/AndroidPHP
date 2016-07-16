@@ -63,7 +63,7 @@ function update_user_info($username, $name, $sex, $age, $city, $phone, $birthday
     }
 }
 
-function insert_user_info_with_image($username, $name, $sex, $age, $city, $phone, $birthday,$image)
+function insert_user_info_with_image($username, $name, $sex, $age, $city, $phone, $birthday, $image)
 {
     $conn = userCon();
     $sql_search_user_info = "select * from user_info where user_name = '$username'";
@@ -83,7 +83,7 @@ function insert_user_info_with_image($username, $name, $sex, $age, $city, $phone
     }
 }
 
-function update_user_info_with_image($username, $name, $sex, $age, $city, $phone, $birthday,$image)
+function update_user_info_with_image($username, $name, $sex, $age, $city, $phone, $birthday, $image)
 {
     $conn = userCon();
     $sql_search_user_info = "select * from user_info where user_name = '$username'";
@@ -104,7 +104,7 @@ function update_user_info_with_image($username, $name, $sex, $age, $city, $phone
     }
 }
 
-function insert_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday,$image_src)
+function insert_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday, $image_src)
 {
     $conn = userCon();
     $sql_search_user_info = "select * from user_info where user_name = '$username'";
@@ -124,7 +124,7 @@ function insert_user_info_with_image_src($username, $name, $sex, $age, $city, $p
     }
 }
 
-function update_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday,$image_src)
+function update_user_info_with_image_src($username, $name, $sex, $age, $city, $phone, $birthday, $image_src)
 {
     $conn = userCon();
     $sql_search_user_info = "select * from user_info where user_name = '$username'";
@@ -138,7 +138,7 @@ function update_user_info_with_image_src($username, $name, $sex, $age, $city, $p
             return array('result' => 'success');
         } else {
             return array('result' => 'error', 'message' => 'UPDATE_FAILED');
-            echo "Error".$sql_update_user_info.$conn->error;
+            echo "Error" . $sql_update_user_info . $conn->error;
         }
         $conn->close();
     } else {
@@ -165,8 +165,8 @@ function search_user_info_with_image_src($username)
 
         //base64传输图片
         $image_file = $row['image_src'];
-        $image_info = getimagesize($image_file);
-        $base64_image_content = "data:{$image_info['mime']};base64," . chunk_split(base64_encode(file_get_contents($image_file)));
+//        $image_info = getimagesize($image_file);
+//        $base64_image_content = "data:{$image_info['mime']};base64," . chunk_split(base64_encode(file_get_contents($image_file)));
 
         //base64解码为二进制图片
 //        $base64_body = substr(strstr($base64_image_content,','),1);
@@ -175,7 +175,7 @@ function search_user_info_with_image_src($username)
 //        echo $data;
 //        echo $base64_image_content;
         return array('result' => 'success', 'account' => $username, 'name' => $row['name'], 'sex' => $row['sex'], 'age' => $row['age'], 'city' => $row['city']
-        , 'phone' => $row['phone'], 'birthday' => $row['birthday'],'image' => $base64_image_content);
+        , 'phone' => $row['phone'], 'birthday' => $row['birthday'], 'image' => $image_file);
 
     } else {
         return array('result' => 'error', 'message' => 'ACCOUNT_ERROR');

@@ -10,11 +10,11 @@
 require '../DBcon/UserInfoSearch.php';
 require '../DBcon/DeleteSrcSearch.php';
 
-//$response = search_user_info_with_image_src('name');
+$response = null;
 //$username = 'admin';
 
-//$username = $_POST['username'];
-//$method = $_POST['m'];
+$username = $_POST['username'];
+$method = $_POST['method'];
 $base_path_before = '../';//上层文件夹
 $base_path = 'uploads_image/'; //接收文件目录
 
@@ -56,7 +56,7 @@ switch ($method) {
         $phone = $_POST['phone'];
         $birthday = $_POST['birthday'];
         $base64_image_content = $_POST['image'];
-
+        $new_file = null;
 //        if ($_FILES["image"]["error"] > 0) {
 //            break;
 //        } else {
@@ -96,10 +96,11 @@ switch ($method) {
             if ($response['result'] == 'success') {
             } else {
                 //删除该路径下的图片
-                if (!unlink($new_file)) {
-                    /** 数据库存储未删除成功的文件 */
-                    insert_delete_src_info($new_file);
-                };
+                if ($new_file != null && $new_file != '')
+                    if (!unlink($new_file)) {
+                        /** 数据库存储未删除成功的文件 */
+                        insert_delete_src_info($new_file);
+                    };
             }
         } else {
             $response = array('result' => 'error', 'message' => 'IMAGE_NOT_EXIST');
@@ -132,6 +133,7 @@ switch ($method) {
         date_default_timezone_set('prc');
         $time_stamp = strtotime(date('Y-m-d H:i:s', time()));
         $target_path = $base_path_before . $base_path . $time_stamp;
+        $new_file = null;
 
         if ($base64_image_content != null && $base64_image_content != '') {
             if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_image_content, $result)) {
@@ -146,18 +148,20 @@ switch ($method) {
             if ($response['result'] == 'success') {
 
                 //删除该路径下的图片
-                if (!unlink($before_image_path)) {
-                    /** 数据库存储未删除成功的文件 */
-                    insert_delete_src_info($before_image_path);
-                };
+                if (($before_image_path != null) && ($before_image_path != ''))
+                    if (!unlink($before_image_path)) {
+                        /** 数据库存储未删除成功的文件 */
+                        insert_delete_src_info($before_image_path);
+                    };
             } else {
                 //删除该路径下的图片
-                if (!unlink($new_file)) {
-                    /** 数据库存储未删除成功的文件 */
-                    insert_delete_src_info($new_file);
-                };
+                if ($new_file != null && $new_file != '')
+                    if (!unlink($new_file)) {
+                        /** 数据库存储未删除成功的文件 */
+                        insert_delete_src_info($new_file);
+                    };
             }
-        }else{
+        } else {
             $response = array('result' => 'error', 'message' => 'IMAGE_NOT_EXIST');
         }
         break;
