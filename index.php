@@ -24,13 +24,17 @@ switch ($id) {
     case 'SUI001':
         $name = $_POST['name'];
         $method = $_GET['m'];
-
-        if ($_FILES['image']['name'] != null) {
-
-            $cfile = curl_file_create($_FILES['image']['name'], 'image/jpeg', 'image');
-            $data = array('username' => $name, 'method' => $method, 'image' => $cfile);
-        } else
+        if ($_POST['image']!= null&&$_POST['image']!='') {
+            $data = array('username' => $name, 'method' => $method, 'image' => $_POST{'image'});
+        } else {
             $data = array('username' => $name, 'method' => $method);
+        }
+//        if ($_FILES['image']['name'] != null) {
+//            $cfile = curl_file_create($_FILES['image']['name'], 'image/jpeg', 'image');
+//            $data = array('username' => $name, 'method' => $method, 'image' => $cfile);
+//        } else {
+//            $data = array('username' => $name, 'method' => $method);
+//        }
         break;
     default:
         $data = null;
