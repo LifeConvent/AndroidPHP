@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="034cedd7-1f1e-4a07-aaf5-8b2e317a9113" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads_image/1468660447.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DBcon/UserInfoSearch.php" afterPath="$PROJECT_DIR$/DBcon/UserInfoSearch.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/SUI001.php" afterPath="$PROJECT_DIR$/index/SUI001.php" />
     </list>
     <ignored path="AndroidPHP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +31,7 @@
       <file leaf-file-name="DBconn.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DBcon/DBconn.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
@@ -45,7 +43,7 @@
       <file leaf-file-name="UserSearch.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DBcon/UserSearch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.666666">
+            <state vertical-scroll-proportion="0.0">
               <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
@@ -62,7 +60,7 @@
       <file leaf-file-name="UserInfoSearch.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DBcon/UserInfoSearch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.541666">
+            <state vertical-scroll-proportion="0.0">
               <caret line="176" column="52" selection-start-line="176" selection-start-column="45" selection-end-line="176" selection-end-column="52" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
@@ -89,7 +87,7 @@
       <file leaf-file-name="SUI001.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index/SUI001.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.625">
+            <state vertical-scroll-proportion="0.0">
               <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
               <folding>
                 <element signature="e#6#109#0#PHP" expanded="true" />
@@ -103,8 +101,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6136364">
-              <caret line="36" column="95" selection-start-line="36" selection-start-column="95" selection-end-line="36" selection-end-column="95" />
+            <state vertical-scroll-proportion="0.45">
+              <caret line="39" column="61" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="61" />
               <folding>
                 <element signature="e#1539#1588#0#PHP" expanded="false" />
               </folding>
@@ -140,7 +138,7 @@
       <file leaf-file-name="SU001.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index/SU001.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
@@ -152,7 +150,7 @@
       <file leaf-file-name="RP001.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index/RP001.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
@@ -203,8 +201,8 @@
   <component name="PhpXdebugProxy" ide_key="phpstorm" host="localhost" port="9000" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1001" />
+    <option name="width" value="1280" />
+    <option name="height" value="721" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -253,6 +251,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -357,7 +356,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -447,10 +445,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1001" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="721" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16197917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16171876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5031746" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -487,6 +485,26 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index/SU001.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/RP001.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index/SUI001.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -980,7 +998,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index/RP001.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
@@ -990,7 +1008,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DBcon/UserSearch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.666666">
+        <state vertical-scroll-proportion="0.0">
           <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
@@ -1005,7 +1023,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DBcon/UserInfoSearch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.541666">
+        <state vertical-scroll-proportion="0.0">
           <caret line="176" column="52" selection-start-line="176" selection-start-column="45" selection-end-line="176" selection-end-column="52" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
@@ -1030,7 +1048,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index/SU001.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
@@ -1040,7 +1058,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index/SUI001.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.625">
+        <state vertical-scroll-proportion="0.0">
           <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
           <folding>
             <element signature="e#6#109#0#PHP" expanded="true" />
@@ -1050,15 +1068,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uploads_image/1468660447.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6136364">
-          <caret line="36" column="95" selection-start-line="36" selection-start-column="95" selection-end-line="36" selection-end-column="95" />
+        <state vertical-scroll-proportion="0.45">
+          <caret line="39" column="61" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="61" />
           <folding>
             <element signature="e#1539#1588#0#PHP" expanded="false" />
           </folding>
